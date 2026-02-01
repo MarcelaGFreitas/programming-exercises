@@ -97,7 +97,8 @@ public class BankingSystem {
                             System.out.println();
                         } else {
                             accountBalance += deposit;
-                            System.out.println("\nDeposit of $" + deposit + " completed successfully.");
+                            System.out.println();
+                            System.out.println("Deposit of $" + deposit + " completed successfully.");
                             System.out.println("Current balance: $" + accountBalance);
                             System.out.println();
                         }
@@ -105,7 +106,7 @@ public class BankingSystem {
                     break;
                 
                     case 4:
-                        if(!accountRegistered) {
+                        if(!accountRegistered) {  
                             System.out.println("Please register an account first.");
                             System.out.println();
                         } else {
@@ -115,7 +116,8 @@ public class BankingSystem {
                             double withdrawal = sc.nextDouble();
 
                             if (withdrawal <= 0) {
-                                System.out.println("\nInvalid withdrawal amount. Please provide a value greater than zero.");
+                                System.out.println();
+                                System.out.println("Invalid withdrawal amount. Please provide a value greater than zero.");
                             } else if (withdrawal > accountBalance) {
                                 System.out.println();
                                 System.out.println("Insufficient balance.");
@@ -123,7 +125,7 @@ public class BankingSystem {
                                 System.out.println("Your current balance is: $" + accountBalance);
                                 System.out.println();
                             } else {
-                                accountBalance -= withdrawal;
+                                accountBalance -= withdrawal;  
                                 System.out.println();
                                 System.out.println("Withdrawal successful.");
                                 System.out.println("Current balance: $" + accountBalance);
