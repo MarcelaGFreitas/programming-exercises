@@ -20,4 +20,5 @@ The main goal of this repository is to practice **programming fundamentals** acr
 ## Author
 
 Developed by **Marcela Gonçalves Freitas**
+
 Software Engineering student with a focus on programming fundamentals.
