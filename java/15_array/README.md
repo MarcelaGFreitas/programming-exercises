@@ -2,9 +2,9 @@
 A simple Java program that sorts a 5-position integer array in ascending order without using built-in methods.
 
 ## Description
-This is an initial version of the exercise, built with the goal of practicing programming logic without relying on built-in sorting methods like `Arrays.sort()`.
+This exercise was built with the goal of practicing programming logic without relying on built-in sorting methods like `Arrays.sort()`.
 
-The next update will implement the **Bubble Sort** manual algorithm as the sorting solution.
+The current version implements the **traditional Bubble Sort** algorithm. The next update will implement an **optimized Bubble Sort** version.
 
 ## What this version does
 * Reads 5 integers from user input
