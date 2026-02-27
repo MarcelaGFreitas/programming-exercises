@@ -21,21 +21,33 @@ public class SortArray {
         System.out.print("Original array: ");
         for(int i=0; i<5; i++) System.out.print(numbers[i] + " ");
 
+        boolean alreadySorted = false;
+
         for(int i=0; i<numbers.length-1; i++){
+            boolean swapped = false;
             for(int j=0; j<numbers.length-1-i; j++){
                 if(numbers[j] > numbers[j+1]){
                     int temporaryVar = numbers[j];
                     numbers[j] = numbers[j+1];
                     numbers[j+1] = temporaryVar;
+                    swapped = true;
                 }
+            }
+            if(!swapped){
+                System.out.print("\nThe array is already sorted in ascending order.");
+                alreadySorted = true;
+                break;
             }
         }
 
-        Thread.sleep(2000);
-        System.out.print("\nArray in ascending order: ");
-        for(int i=0; i<5; i++){
-            System.out.print(numbers[i] + " ");
+        Thread.sleep(3000);
+        if(!alreadySorted){
+            System.out.print("\nArray in ascending order: ");
+            for(int i=0; i<5; i++){
+                System.out.print(numbers[i] + " ");
+            }
         }
+        
         sc.close();
     }
 }
