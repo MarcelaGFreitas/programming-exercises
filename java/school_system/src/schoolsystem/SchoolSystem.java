@@ -78,7 +78,7 @@ public class SchoolSystem {
             }
         }
 
-        System.out.println("Approved:");
+        System.out.println("Approved students (average greater than or equal to 7)");
         for(int i = 0; i < approved.size(); i++){
             System.out.println(approved.get(i));
         }
@@ -94,7 +94,7 @@ public class SchoolSystem {
             }
         }
         System.out.println("Best student: " + students[best].getName());
-        System.out.println("Average: " + students[best].calculateAverage());
+        System.out.printf("Average: %.2f\n", students[best].calculateAverage());
     }
 
     // Class average - calculates the overall class average (by summing all student's and dividing by the total number of grades)
@@ -108,7 +108,7 @@ public class SchoolSystem {
                 count++;
             }
         }
-        System.out.println("Class average: " + (total / count));
+        System.out.printf("Class average: %.2f\n", (total / count));
     }
 
     // Best subject - finds and displays the subject with the highest average grade
@@ -130,13 +130,14 @@ public class SchoolSystem {
             }
         }
         System.out.println("Best subject: " + subjects[bestIndex].getName());
+        System.out.printf("Average: %.2f\n", bestAvg);
     }
 
      // Approved sorted - sorts and displays the list of approved students in alphabetical order
     public void showApprovedSorted(){
         Collections.sort(approved);
 
-        System.out.println("Approved (Alphabetical Order):");
+        System.out.println("--- Approved Students in Alphabetical Order ---");
         for(int i = 0; i < approved.size(); i++){
             System.out.println(approved.get(i));
         }
@@ -155,7 +156,7 @@ public class SchoolSystem {
 
         Collections.sort(failed);
 
-        System.out.println("Failed (Alphabetical Order):");
+        System.out.println("--- Failed students (average less than 7) in Alphabetical Order ---");
         for(int i = 0; i < failed.size(); i++){
             System.out.println(failed.get(i));
         }
