@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    // Waits for user to press ENTER before returning to menu
+    public static void waitForEnter(Scanner sc){
+        System.out.println("\nPress ENTER to return to the main menu...");
+        sc.nextLine();
+    }
+
+    public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
 
@@ -30,66 +36,93 @@ public class Main {
             System.out.println("9 - Show approved sorted");
             System.out.println("10 - Show failed sorted");
             System.out.println("0 - Exit");
+            System.out.print("\nChoose an option: ");
 
             option = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             switch(option){
 
                 case 1:
+                    System.out.println("--- Register Student ---");
                     for(int i = 0; i < 5; i++){
-                        System.out.println("Enter student name:");
+                        System.out.print("Enter student name: ");
                         studentNames[i] = sc.nextLine();
                     }
                     system.registerStudents(studentNames);
+                    Thread.sleep(3000);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 2:
+                    System.out.println("--- Register Subject ---");
                     for(int j = 0; j < 3; j++){
-                        System.out.println("Enter subject name:");
+                        System.out.print("Enter subject name: ");
                         subjectNames[j] = sc.nextLine();
                     }
                     system.registerSubjects(subjectNames);
+                    Thread.sleep(3000);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 3:
+                    System.out.println("--- Register Grades ---");
+
                     for(int i = 0; i < 5; i++){
-                        System.out.println("Student " + (i+1));
+                        System.out.print("\nStudent: " + studentNames[i] + "\n");
 
                         for(int j = 0; j < 3; j++){
-                            System.out.println("Enter grade:");
+                            System.out.print("Enter grade for " + subjectNames[j] + ": ");
+
                             grades[i][j] = sc.nextDouble();
+                            sc.nextLine(); // clear buffer after reading numbers
                         }
                     }
                     system.setGrades(grades);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 4:
                     system.showTable();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 5:
                     system.showApproved();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 6:
                     system.showBestStudent();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 7:
                     system.showClassAverage();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 8:
                     system.showBestSubject();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 9:
                     system.showApprovedSorted();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 10:
                     system.showFailedSorted();
+                    waitForEnter(sc);
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                     break;
 
                 case 0:
