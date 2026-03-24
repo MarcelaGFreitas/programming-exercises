@@ -43,21 +43,28 @@ public class SchoolSystem {
         }
     }
 
-     // Show table - displays a table with students, their grades, and their averages
+    // Show table - displays a formatted table with students, their grades, and averages
     public void showTable(){
-        System.out.print("Student\t");
+        System.out.printf("%-15s", "Student");
 
         for(int j = 0; j < 3; j++){
-            System.out.print(subjects[j].getName() + "\t");    // prints the name of all subjects
+            System.out.printf("%-15s", subjects[j].getName()); // fixed width for each subject
         }
-        System.out.println("Average");
-        for(int i = 0; i < 5; i++){    // loop through each student
-            System.out.print(students[i].getName() + "\t");
 
-            for(int j = 0; j < 3; j++){    // loop through each subject
-                System.out.print(students[i].getGrades()[j] + "\t");
+        System.out.printf("%-15s\n", "Average");
+
+        for(int i = 0; i < 5; i++){
+
+            // Print student name
+            System.out.printf("%-15s", students[i].getName());
+
+            // Print grades
+            for(int j = 0; j < 3; j++){
+                System.out.printf("%-15.2f", students[i].getGrades()[j]); // 2 decimal places
             }
-            System.out.println(students[i].calculateAverage());    // print the student's average at the end of the row
+
+            // Print average
+            System.out.printf("%-15.2f\n", students[i].calculateAverage());
         }
     }
 
